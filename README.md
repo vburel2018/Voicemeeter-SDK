@@ -12,5 +12,5 @@ Voicemeeter Remote API provides a set of functions to control Voicemeeter parame
 Voicemeeter API are provided by standard Windows DLL installed with Voicemeeter. It provides 2x DLL for x32 and x64 applications. Linking method is given in the source code example. Compilation instructions are given in source code header and all API specifications are in the PDF document.
 
 # Licensing
-All source code of this SDK is free to use in any kind of project interacting with Voicemeeter though the voicemeeterremote DLL or VBAN protocol. More detail in VoicemeeterRemoteAPI.pdf
+All source code of this SDK is free to use in any kind of project interacting with Voicemeeter through the voicemeeterremote DLL or VBAN protocol. More detail in VoicemeeterRemoteAPI.pdf
 
