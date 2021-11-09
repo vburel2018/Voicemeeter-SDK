@@ -1,0 +1,17 @@
+Bus[0].eq.channel[0].cell[0].on=0;
+Bus[0].eq.channel[0].cell[0].type=0;
+Bus[0].eq.channel[0].cell[0].quality=3.0;
+Bus[0].eq.channel[0].cell[0].frequency=50;
+Bus[0].eq.channel[0].cell[0].gain=0;
+
+Bus[0].eq.channel[0].cell[1].on=0;
+Bus[0].eq.channel[0].cell[1].type=0;
+Bus[0].eq.channel[0].cell[1].quality=3.0;
+Bus[0].eq.channel[0].cell[1].frequency=200;
+Bus[0].eq.channel[0].cell[1].gain=0;
+
+Bus[0].eq.channel[0].cell[2].on=0;
+Bus[0].eq.channel[0].cell[2].type=0;
+Bus[0].eq.channel[0].cell[2].quality=3.0;
+Bus[0].eq.channel[0].cell[2].frequency=800;
+Bus[0].eq.channel[0].cell[2].gain=0;

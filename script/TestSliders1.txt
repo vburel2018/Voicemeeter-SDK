@@ -1,0 +1,16 @@
+Strip[0].gain=0;
+Strip[1].gain=0;
+Strip[2].gain=0;
+Strip[3].gain=0;
+Strip[4].gain=0;
+Strip[5].gain=0;
+Strip[6].gain=0;
+Strip[7].gain=0;
+Bus[0].gain=0;
+Bus[1].gain=0;
+Bus[2].gain=0;
+Bus[3].gain=0;
+Bus[4].gain=0;
+Bus[5].gain=0;
+Bus[6].gain=0;
+Bus[7].gain=0;

@@ -1,0 +1,39 @@
+Bus[0].ReturnReverb= 0;
+Bus[0].ReturnDelay= 0;
+Bus[0].ReturnFx1= 0;
+Bus[0].ReturnFx2= 0;
+
+Bus[1].ReturnReverb= 0;
+Bus[1].ReturnDelay= 0;
+Bus[1].ReturnFx1= 0;
+Bus[1].ReturnFx2= 0;
+
+Bus[2].ReturnReverb= 0;
+Bus[2].ReturnDelay= 0;
+Bus[2].ReturnFx1= 0;
+Bus[2].ReturnFx2= 0;
+
+Bus[3].ReturnReverb= 0;
+Bus[3].ReturnDelay= 0;
+Bus[3].ReturnFx1= 0;
+Bus[3].ReturnFx2= 0;
+
+Bus[4].ReturnReverb= 0;
+Bus[4].ReturnDelay= 0;
+Bus[4].ReturnFx1= 0;
+Bus[4].ReturnFx2= 0;
+
+Bus[5].ReturnReverb= 0;
+Bus[5].ReturnDelay= 0;
+Bus[5].ReturnFx1= 0;
+Bus[5].ReturnFx2= 0;
+
+Bus[6].ReturnReverb= 0;
+Bus[6].ReturnDelay= 0;
+Bus[6].ReturnFx1= 0;
+Bus[6].ReturnFx2= 0;
+
+Bus[7].ReturnReverb= 0;
+Bus[7].ReturnDelay= 0;
+Bus[7].ReturnFx1= 0;
+Bus[7].ReturnFx2= 0;

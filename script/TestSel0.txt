@@ -1,0 +1,9 @@
+Bus[0].sel=0;
+Bus[1].sel=0;
+Bus[2].sel=0;
+Bus[3].sel=0;
+Bus[4].sel=0;
+Bus[5].sel=0;
+Bus[6].sel=0;
+Bus[7].sel=0;
+

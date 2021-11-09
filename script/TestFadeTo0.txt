@@ -1,0 +1,17 @@
+Strip[0].FadeTo=(0.0, 1500);
+Strip[1].FadeTo=(0.0, 2000);
+Strip[2].FadeTo=(0.0, 3500);
+Strip[3].FadeTo=(0.0, 4000);
+Strip[4].FadeTo=(0.0, 5500);
+Strip[5].FadeTo=(0.0, 6000);
+Strip[6].FadeTo=(0.0, 6500);
+Strip[7].FadeTo=(0.0, 7000);
+
+Bus[0].FadeTo=(0.0, 5000);
+Bus[1].FadeTo=(0.0, 6000);
+Bus[2].FadeTo=(0.0, 7500);
+Bus[3].FadeTo=(0.0, 8000);
+Bus[4].FadeTo=(0.0, 9500);
+Bus[5].FadeTo=(0.0, 10000);
+Bus[6].FadeTo=(0.0, 10500);
+Bus[7].FadeTo=(0.0, 11000);

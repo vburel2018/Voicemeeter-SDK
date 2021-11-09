@@ -1,0 +1,8 @@
+Strip[0].karaoke=0;
+Strip[1].karaoke=0;
+Strip[2].karaoke=0;
+Strip[3].karaoke=0;
+Strip[4].karaoke=0;
+Strip[5].karaoke=0;
+Strip[6].karaoke=0;
+Strip[7].karaoke=0;

@@ -1,0 +1,17 @@
+Strip[0].label="";
+Strip[1].label="";
+Strip[2].label="";
+Strip[3].label="";
+Strip[4].label="";
+Strip[5].label="";
+Strip[6].label="";
+Strip[7].label="";
+
+Bus[0].label="";
+Bus[1].label="";
+Bus[2].label="";
+Bus[3].label="";
+Bus[4].label="";
+Bus[5].label="";
+Bus[6].label="";
+Bus[7].label="";

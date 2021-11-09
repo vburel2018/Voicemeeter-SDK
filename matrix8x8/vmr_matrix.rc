@@ -1,0 +1,74 @@
+/*--------------------------------------------------------------------------------*/
+/* APA example: 8x8 Gain Matrix Audio processing As Application                   */
+/*--------------------------------------------------------------------------------*/
+/* 'C' Sample Code to make a Voicemeeter APO                 V.Burel (c)2016-2021 */
+/*                                                                                */
+/*  THIS PROGRAM PROCESSES A 8x8 GAIN MATRIX ON SINGLE BUS (SELECTABLE)           */
+/*                                                                                */
+/*  This program example shows                                                    */
+/*  - How to link VoicemeeterRemote.dll                                           */
+/*  - How to Login / logout                                                       */
+/*  - How to install Audio Callback as output insert.                             */
+/*                                                                                */
+/*  THIS PROGRAM PROCESSES A 8x8 GAIN MATRIX ON SINGLE BUS (SELECTABLE)           */
+/*                                                                                */
+/*--------------------------------------------------------------------------------*/
+/*                                                                                */
+/*  COMPILATION DIRECTIVES:                                                       */
+/*                                                                                */
+/*  To compile With Microsoft VC2005 or higher, you need to create an             */
+/*  empty Win32 project with the following options:                               */
+/*  - Configuration Properties / General : Char Set = NOT SET                     */
+/*  - Configuration Properties / C/C++ / Preprocessor : _CRT_SECURE_NO_DEPRECATE  */
+/*                                                                                */
+/*  This source code can be compiled for 32bit or 64 bits targets as well         */
+/*                                                                                */
+/*--------------------------------------------------------------------------------*/
+/*                                                                                */
+/*  LICENSING: VoicemeeterRemote.dll usage is driven by a license agreement       */
+/*             given in VoicemeeterRemoteAPI.pdf or readme.txt                    */
+/*                                                                                */
+/*--------------------------------------------------------------------------------*/
+#include "vmr_matrix.h"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION __FILEVERSION__
+ PRODUCTVERSION __PRODUCTVERSION__
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x0L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", __COMMENTS__
+            VALUE "CompanyName", __COMPANYNAME__
+            VALUE "FileDescription", __FILEDESCRIPTION__
+            VALUE "FileVersion", __SZFILEVERSION__
+            VALUE "InternalName", __INTERNALNAME__
+            VALUE "LegalCopyright", __LEGALCOPYRIGHT__
+            VALUE "OriginalFilename", __ORIGINALFILENAME__
+            VALUE "ProductName", __PRODUCTNAME__
+            VALUE "ProductVersion", __SZPRODUCTVERSION__
+		END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+

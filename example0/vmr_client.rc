@@ -1,0 +1,170 @@
+/*--------------------------------------------------------------------------------*/
+/* VMR_CLIENT: Reference example to use all functions of the VMR-API              */
+/*--------------------------------------------------------------------------------*/
+/* 'C' Sample Code to use VoicemeeterRemote                  V.Burel (c)2015-2021 */
+/*                                                                                */
+/*  Based on Minimal program ('C' Programming Under WIN32)                        */
+/*  WEB  : http://pagesperso-orange.fr/vb-audio/fr/pub/programming/index.htm      */
+/*  mail : infoprog@vb-audio.com                                                  */
+/*                                                                                */
+/*  This program example shows                                                    */
+/*  - How to link VoicemeeterRemote.dll                                           */
+/*  - How to Login / logout                                                       */
+/*  - How to use GetParameter Function.                                           */
+/*  - How to use SetParameter Function.                                           */
+/*  - How to display new parameters values.                                       */
+/*  - How to display levels.                                                      */
+/*  - How to get audio device list.                                               */
+/*  - How to change input and output audio device.                                */
+/*  - How to send txt request, by a simple file.                                  */
+/*  - How to send special Command.                                                */
+/*  - How to receive M.I.D.I. message.                                            */
+/*  - How to install Audio Callback.                                              */
+/*  - How to manage Potato appplication gain/mute state (in virtual strip).       */
+/*  - How to manage MacroButtons states.                                          */
+/*                                                                                */
+/*--------------------------------------------------------------------------------*/
+/*                                                                                */
+/*  COMPILATION DIRECTIVES:                                                       */
+/*                                                                                */
+/*  To compile With Microsoft VC2005 or higher, you need to create an             */
+/*  empty Win32 project with the following options:                               */
+/*  - Configuration Properties / General : Char Set = NOT SET                     */
+/*  - Configuration Properties / C/C++ / Preprocessor : _CRT_SECURE_NO_DEPRECATE  */
+/*                                                                                */
+/*  This source code can be compiled for 32bit or 64 bits targets as well         */
+/*                                                                                */
+/*--------------------------------------------------------------------------------*/
+/*                                                                                */
+/*  LICENSING: VoicemeeterRemote.dll usage is driven by a license agreement       */
+/*             given in VoicemeeterRemoteAPI.pdf or readme.txt                    */
+/*                                                                                */
+/*--------------------------------------------------------------------------------*/
+
+#include "vmr_client.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MyMainAppMenu MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Load Script File",			IDM_LOAD
+        MENUITEM "&Display Server Info",		IDM_SERVERINFO
+        MENUITEM SEPARATOR
+        MENUITEM "&About",                      IDM_ABOUT
+        MENUITEM "&Quit",                       IDM_QUIT
+    END
+    POPUP "&request"
+    BEGIN
+        MENUITEM "test simple request 1",      IDM_TEST_1
+        MENUITEM "test simple request 2",      IDM_TEST_2
+        MENUITEM "test simple request 3",      IDM_TEST_3
+        MENUITEM SEPARATOR
+        MENUITEM "test multi request 1",      IDM_MTEST_1
+        MENUITEM "test multi request 2",      IDM_MTEST_2
+        MENUITEM "test multi request 3",      IDM_MTEST_3
+        MENUITEM SEPARATOR
+        MENUITEM "Select Input#1 device",      IDM_DEVICE_IN1
+        MENUITEM "Select Output A1 device",    IDM_DEVICE_OUT1
+        MENUITEM "Remove Input#1 device selection",      IDM_REMOVEDEVICE_IN1
+        MENUITEM "Remove Output A1 device  selection",    IDM_REMOVEDEVICE_OUT1
+        MENUITEM SEPARATOR
+        MENUITEM "Set Strip(3).Label = 'Name3'",      IDM_LABEL_STRIP3
+        MENUITEM "Set Strip(4).Label = 'Name4'",      IDM_LABEL_STRIP4
+        MENUITEM "Set BUS(5).Label = 'Name5'",      IDM_LABEL_BUS5
+        MENUITEM "Set BUS(6).Label = 'Name6'",      IDM_LABEL_BUS6
+
+        MENUITEM SEPARATOR
+        MENUITEM "SetParametersW(Bus[0].device.wdm= Speakers (High Definition Audio Device))",      IDM_SETPARAMETERW1
+        MENUITEM "SetParametersW(Bus[1].device.wdm='''')",      IDM_SETPARAMETERW2
+        MENUITEM "SetParametersW(Strip[0].device.wdm= Microphone (High Definition Audio Device))",      IDM_SETPARAMETERW3
+        MENUITEM "SetParametersW(Strip[0].device = '''')"),      IDM_SETPARAMETERW4
+    END
+    POPUP "&Recorder"
+    BEGIN
+        MENUITEM "recorder.stop",	    IDM_COMMAND_REC_STOP
+        MENUITEM "recorder.play",	    IDM_COMMAND_REC_PLAY
+        MENUITEM "recorder.record",	    IDM_COMMAND_REC_REC
+        MENUITEM "recorder.pause",	    IDM_COMMAND_REC_PAUSE
+        MENUITEM "recorder.ff",			IDM_COMMAND_REC_FF
+        MENUITEM "recorder.rew",	    IDM_COMMAND_REC_REW
+        MENUITEM "recorder.goto = 0",	IDM_COMMAND_REC_GOTO
+        MENUITEM "recorder.goto = 01:00",	IDM_COMMAND_REC_GOTO1
+        MENUITEM "recorder.goto = 02:00",	IDM_COMMAND_REC_GOTO2
+        MENUITEM "recorder.replay",		IDM_COMMAND_REC_RESTART
+    END
+    POPUP "&Special"
+    BEGIN
+        MENUITEM "command.shutdown",	    IDM_COMMAND_SHUTDOWN
+        MENUITEM "command.Show =1",			IDM_COMMAND_SHOW
+        MENUITEM "command.Show =0",			IDM_COMMAND_HIDE
+        MENUITEM "command.Restart",			IDM_COMMAND_RESTART
+        MENUITEM "command.Eject",			IDM_COMMAND_EJECT
+        MENUITEM "command.Reset",			IDM_COMMAND_RESET
+        MENUITEM SEPARATOR
+        MENUITEM "Strip(5).App(0).Gain = 0.5",	IDM_COMMAND_VOLAPP_1
+        MENUITEM "Strip(6).App(0).Gain = 0.6",	IDM_COMMAND_VOLAPP_2
+        MENUITEM "Strip(7).App(0).Gain = 0.7",	IDM_COMMAND_VOLAPP_3
+        MENUITEM "Strip(5).App(0).Mute = 1",	IDM_COMMAND_VOLAPP_4
+        MENUITEM "Strip(6).App(0).Mute = 1",	IDM_COMMAND_VOLAPP_5
+        MENUITEM "Strip(7).App(0).Mute = 1",	IDM_COMMAND_VOLAPP_6
+        MENUITEM "Strip(5).App(1).Gain = 0.5f",	IDM_COMMAND_VOLAPP_7
+        MENUITEM SEPARATOR
+        MENUITEM "Strip(5).AppGain = (""Windows"", 0.1)",	IDM_COMMAND_VOLAPP_8
+        MENUITEM "Strip(5).AppMute = (""Windows"", 1)",	IDM_COMMAND_VOLAPP_9
+
+	END
+    POPUP "&Audio CallBack"
+    BEGIN
+        MENUITEM "Register Audio Callback",	IDM_COMMAND_ACB_REGISTER
+        MENUITEM "UnRegister Audio Callback",	IDM_COMMAND_ACB_UNREGISTER
+        MENUITEM "START Audio Callback",	IDM_COMMAND_ACB_START
+        MENUITEM "STOP Audio Callback",		IDM_COMMAND_ACB_STOP
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION __FILEVERSION__
+ PRODUCTVERSION __PRODUCTVERSION__
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x0L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", __COMMENTS__
+            VALUE "CompanyName", __COMPANYNAME__
+            VALUE "FileDescription", __FILEDESCRIPTION__
+            VALUE "FileVersion", __SZFILEVERSION__
+            VALUE "InternalName", __INTERNALNAME__
+            VALUE "LegalCopyright", __LEGALCOPYRIGHT__
+            VALUE "OriginalFilename", __ORIGINALFILENAME__
+            VALUE "ProductName", __PRODUCTNAME__
+            VALUE "ProductVersion", __SZPRODUCTVERSION__
+		END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+

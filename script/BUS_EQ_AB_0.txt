@@ -1,0 +1,10 @@
+BUS(0).EQ.AB = 0;
+BUS(1).EQ.AB = 0;
+BUS(2).EQ.AB = 0;
+BUS(3).EQ.AB = 0;
+BUS(4).EQ.AB = 0;
+BUS(5).EQ.AB = 0;
+BUS(6).EQ.AB = 0;
+BUS(7).EQ.AB = 0;
+
+

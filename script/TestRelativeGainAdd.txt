@@ -1,0 +1,33 @@
+Strip[0].gain +=3;
+Strip[0].comp +=0.1;
+Strip[0].gate +=0.1;
+Strip[0].Color_x+=0.1;
+Strip[0].Color_y+=0.1;
+
+Strip[1].gain +=3;
+Strip[1].comp +=0.1;
+Strip[1].gate +=0.1;
+Strip[1].Color_x+=0.1;
+Strip[1].Color_y+=0.1;
+
+Strip[2].gain +=3;
+Strip[2].comp +=0.1;
+Strip[2].gate +=0.1;
+Strip[2].Color_x+=0.1;
+Strip[2].Color_y+=0.1;
+
+Strip[3].gain +=3;
+Strip[3].EQGain1 +=1;
+Strip[3].EQGain2 +=1;
+Strip[3].EQGain3 +=1;
+
+Strip[4].gain+=3;
+Strip[4].EQGain1 +=1;
+Strip[4].EQGain2 +=1;
+Strip[4].EQGain3 +=1;
+
+Bus[0].gain+=3;
+Bus[1].gain+=3;
+Bus[2].gain+=3;
+Bus[3].gain+=3;
+Bus[4].gain+=3;

@@ -1,0 +1,47 @@
+Bus[0].mono=0;
+Bus[0].eq.on=0;
+Bus[0].mute=0;
+Bus[0].mode.normal=1;
+Bus[0].gain	=0;
+
+Bus[1].mono=0;
+Bus[1].eq.on=0;
+Bus[1].mute=0;
+Bus[1].mode.Amix=1;
+Bus[1].gain	=0;
+
+Bus[2].mono=0;
+Bus[2].eq.on=0;
+Bus[2].mute=0;
+Bus[2].mode.composite=1;
+Bus[2].gain	=0;
+
+Bus[3].mono=0;
+Bus[3].eq.on=0;
+Bus[3].mute=0;
+Bus[3].mode.BMix=1;
+Bus[3].gain	=0;
+
+Bus[4].mono=0;
+Bus[4].eq.on=0;
+Bus[4].mute=0;
+Bus[4].mode.Repeat=1;
+Bus[4].gain	=0;
+
+Bus[5].mono=0;
+Bus[5].eq.on=0;
+Bus[5].mute=0;
+Bus[5].mode.Repeat=1;
+Bus[5].gain	=0;
+
+Bus[6].mono=0;
+Bus[6].eq.on=0;
+Bus[6].mute=0;
+Bus[6].mode.Repeat=1;
+Bus[6].gain	=0;
+
+Bus[7].mono=0;
+Bus[7].eq.on=0;
+Bus[7].mute=0;
+Bus[7].mode.Repeat=1;
+Bus[7].gain	=0;

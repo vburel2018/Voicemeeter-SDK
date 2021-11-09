@@ -1,0 +1,9 @@
+Recorder.load ="F:\SoundPadTest\Come2.mp3";
+Recorder.play=1;
+Recorder.A1=1;
+Recorder.A2=1;
+Recorder.A3=1;
+Recorder.B1=0;
+Recorder.B2=0;
+
+

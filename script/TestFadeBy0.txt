@@ -1,0 +1,17 @@
+Strip[0].FadeBy=(10.0, 1500);
+Strip[1].FadeBy=(10.0, 2000);
+Strip[2].FadeBy=(10.0, 3500);
+Strip[3].FadeBy=(10.0, 4000);
+Strip[4].FadeBy=(10.0, 5500);
+Strip[5].FadeBy=(10.0, 6000);
+Strip[6].FadeBy=(10.0, 6500);
+Strip[7].FadeBy=(10.0, 7000);
+
+Bus[0].FadeBy=(10.0, 5000);
+Bus[1].FadeBy=(10.0, 6000);
+Bus[2].FadeBy=(10.0, 7500);
+Bus[3].FadeBy=(10.0, 8000);
+Bus[4].FadeBy=(10.0, 9500);
+Bus[5].FadeBy=(10.0, 10000);
+Bus[6].FadeBy=(10.0, 10500);
+Bus[7].FadeBy=(10.0, 11000);

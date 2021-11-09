@@ -1,0 +1,8 @@
+Recorder.load ="E:\SoundTest_song\EMF_Unbelievable.wav";
+Recorder.play=1;
+Recorder.A1=0;
+Recorder.A2=0;
+Recorder.A3=0;
+Recorder.B1=1;
+Recorder.B2=1;
+

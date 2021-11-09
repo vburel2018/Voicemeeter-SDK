@@ -1,0 +1,18 @@
+Recorder.samplerate =48000;
+Recorder.ArmStrip[0] =0;
+Recorder.ArmStrip[1] =0;
+Recorder.ArmStrip[2] =0;
+Recorder.ArmStrip[3] =1;
+Recorder.ArmStrip[4] =0;
+Recorder.ArmBUS[0] =2;
+Recorder.mode.Recbus=1;
+Recorder.mode.PlayOnLoad=0;
+Recorder.mode.Loop=1;
+Recorder.mode.MultiTrack=1;
+recorder.bitresolution=24;
+recorder.Channel=4;
+
+recorder.FileType=100;
+recorder.kbps=320;
+recorder.Gain=-10.0;
+

@@ -1,0 +1,161 @@
+vban.instream[0].on =1;
+vban.instream[0].name="Test1";
+vban.instream[0].ip="192.168.0.1";
+vban.instream[0].port = 80;
+vban.instream[0].sr = 192000;
+vban.instream[0].channel = 1;
+vban.instream[0].bit = 2;
+vban.instream[0].quality = 1;
+vban.instream[0].route = 0;
+
+vban.instream[1].on =1;
+vban.instream[1].name="Test2";
+vban.instream[1].ip="192.168.0.2";
+vban.instream[1].port = 80;
+vban.instream[1].sr = 192000;
+vban.instream[1].channel = 2;
+vban.instream[1].bit = 2;
+vban.instream[1].quality = 2;
+vban.instream[1].route = 1;
+
+vban.instream[2].on =1;
+vban.instream[2].name="Test3";
+vban.instream[2].ip="192.168.0.3";
+vban.instream[2].port = 80;
+vban.instream[2].sr = 192000;
+vban.instream[2].channel = 3;
+vban.instream[2].bit = 2;
+vban.instream[2].quality = 3;
+vban.instream[2].route = 2;
+
+vban.instream[3].on =1;
+vban.instream[3].name="Test4";
+vban.instream[3].ip="192.168.0.4";
+vban.instream[3].port = 80;
+vban.instream[3].sr = 192000;
+vban.instream[3].channel = 4;
+vban.instream[3].bit = 2;
+vban.instream[3].quality = 4;
+vban.instream[3].route = 3;
+
+vban.instream[4].on =1;
+vban.instream[4].name="Test5";
+vban.instream[4].ip="192.168.0.5";
+vban.instream[4].port = 80;
+vban.instream[4].sr = 192000;
+vban.instream[4].channel = 5;
+vban.instream[4].bit = 2;
+vban.instream[4].quality = 3;
+vban.instream[4].route = 4;
+
+vban.instream[5].on =1;
+vban.instream[5].name="Test6";
+vban.instream[5].ip="192.168.0.6";
+vban.instream[5].port = 80;
+vban.instream[5].sr = 192000;
+vban.instream[5].channel = 6;
+vban.instream[5].bit = 2;
+vban.instream[5].quality = 2;
+vban.instream[5].route = 5;
+
+vban.instream[6].on =1;
+vban.instream[6].name="Test7";
+vban.instream[6].ip="192.168.0.7";
+vban.instream[6].port = 80;
+vban.instream[6].sr = 192000;
+vban.instream[6].channel = 7;
+vban.instream[6].bit = 2;
+vban.instream[6].quality = 1;
+vban.instream[6].route = 6;
+
+vban.instream[7].on =1;
+vban.instream[7].name="Test8";
+vban.instream[7].ip="192.168.0.8";
+vban.instream[7].port = 80;
+vban.instream[7].sr = 192000;
+vban.instream[7].channel = 8;
+vban.instream[7].bit = 2;
+vban.instream[7].quality = 0;
+vban.instream[7].route = 7;
+
+
+
+vban.outstream[0].on =1;
+vban.outstream[0].name="OUT Test1";
+vban.outstream[0].ip="192.168.5.1";
+vban.outstream[0].port = 80;
+vban.outstream[0].sr = 64000;
+vban.outstream[0].channel = 1;
+vban.outstream[0].bit = 2;
+vban.outstream[0].quality = 1;
+vban.outstream[0].route = 0;
+
+vban.outstream[1].on =1;
+vban.outstream[1].name="OUT Test2";
+vban.outstream[1].ip="192.168.5.2";
+vban.outstream[1].port = 81;
+vban.outstream[1].sr = 128000;
+vban.outstream[1].channel = 2;
+vban.outstream[1].bit = 2;
+vban.outstream[1].quality = 2;
+vban.outstream[1].route = 1;
+
+vban.outstream[2].on =1;
+vban.outstream[2].name="OUT Test3";
+vban.outstream[2].ip="192.168.5.3";
+vban.outstream[2].port = 82;
+vban.outstream[2].sr = 176400;
+vban.outstream[2].channel = 3;
+vban.outstream[2].bit = 2;
+vban.outstream[2].quality = 3;
+vban.outstream[2].route = 2;
+
+vban.outstream[3].on =1;
+vban.outstream[3].name="OUT Test4";
+vban.outstream[3].ip="192.168.5.4";
+vban.outstream[3].port = 83;
+vban.outstream[3].sr = 192000;
+vban.outstream[3].channel = 4;
+vban.outstream[3].bit = 2;
+vban.outstream[3].quality = 4;
+vban.outstream[3].route = 3;
+
+vban.outstream[4].on =1;
+vban.outstream[4].name="OUT Test5";
+vban.outstream[4].ip="192.168.5.5";
+vban.outstream[4].port = 84;
+vban.outstream[4].sr = 256000;
+vban.outstream[4].channel = 5;
+vban.outstream[4].bit = 4;
+vban.outstream[4].quality = 3;
+vban.outstream[4].route = 4;
+
+vban.outstream[5].on =1;
+vban.outstream[5].name="OUT Test6";
+vban.outstream[5].ip="192.168.5.6";
+vban.outstream[5].port = 85;
+vban.outstream[5].sr = 11025;
+vban.outstream[5].channel = 6;
+vban.outstream[5].bit = 3;
+vban.outstream[5].quality = 2;
+vban.outstream[5].route = 5;
+
+vban.outstream[6].on =1;
+vban.outstream[6].name="OUT Test7";
+vban.outstream[6].ip="192.168.5.7";
+vban.outstream[6].port = 86;
+vban.outstream[6].sr = 32000;
+vban.outstream[6].channel = 7;
+vban.outstream[6].bit = 2;
+vban.outstream[6].quality = 1;
+vban.outstream[6].route = 6;
+
+vban.outstream[7].on =1;
+vban.outstream[7].name="OUT Test8";
+vban.outstream[7].ip="192.168.5.8";
+vban.outstream[7].port = 87;
+vban.outstream[7].sr = 16000;
+vban.outstream[7].channel = 6;
+vban.outstream[7].bit = 1;
+vban.outstream[7].quality = 0;
+vban.outstream[7].route = 7;

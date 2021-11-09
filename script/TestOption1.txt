@@ -1,0 +1,11 @@
+option.sr=48000;
+option.ASIOsr=1;
+option.delay(0)=10;
+option.delay(1)=20;
+option.delay(2)=30;
+option.buffer.mme=512;
+option.buffer.wdm=256;
+option.buffer.ks=256
+option.buffer.asio=256;
+option.mode.exclusif=1;
+option.mode.swift=1;

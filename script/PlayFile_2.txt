@@ -1,0 +1,4 @@
+Recorder.load ="H:\AudioSound\MadeleinePeyroux_CarelessLove.wav";
+Recorder.play=1;
+
+

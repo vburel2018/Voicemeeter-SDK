@@ -1,0 +1,18 @@
+Strip[0].label="label1";
+Strip[1].label="label2";
+Strip[2].label="label3";
+Strip[3].label="label4";
+Strip[4].label="label5";
+Strip[5].label="label6";
+Strip[6].label="label7";
+Strip[7].label="label8";
+
+Bus[0].label="OUT 1";
+Bus[1].label="OUT 2";
+Bus[2].label="OUT 3";
+Bus[3].label="OUT 4";
+Bus[4].label="OUT 5";
+
+Bus[5].label="V-OUT 1";
+Bus[6].label="V-OUT 2";
+Bus[7].label="V-OUT 3";

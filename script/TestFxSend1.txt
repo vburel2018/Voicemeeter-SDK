@@ -1,0 +1,44 @@
+Strip[0].Reverb= 5;
+Strip[0].Delay=6;
+Strip[0].Fx1=7;
+Strip[0].Fx2=8;
+Strip[0].PostReverb=1;
+Strip[0].PostDelay=1;
+Strip[0].PostFx1=1;
+Strip[0].PostFx2=1;
+
+Strip[1].Reverb= 1;
+Strip[1].Delay=2;
+Strip[1].Fx1=3;
+Strip[1].Fx2=4;
+Strip[1].PostReverb=1;
+Strip[1].PostDelay=1;
+Strip[1].PostFx1=1;
+Strip[1].PostFx2=1;
+
+Strip[2].Reverb= 5;
+Strip[2].Delay=6;
+Strip[2].Fx1=7;
+Strip[2].Fx2=8;
+Strip[2].PostReverb=1;
+Strip[2].PostDelay=1;
+Strip[2].PostFx1=1;
+Strip[2].PostFx2=1;
+
+Strip[3].Reverb= 1;
+Strip[3].Delay=2;
+Strip[3].Fx1=3;
+Strip[3].Fx2=4;
+Strip[3].PostReverb=1;
+Strip[3].PostDelay=1;
+Strip[3].PostFx1=1;
+Strip[3].PostFx2=1;
+
+Strip[4].Reverb= 10;
+Strip[4].Delay=10;
+Strip[4].Fx1=10;
+Strip[4].Fx2=10;
+Strip[4].PostReverb=1;
+Strip[4].PostDelay=1;
+Strip[4].PostFx1=1;
+Strip[4].PostFx2=1;

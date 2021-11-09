@@ -1,0 +1,19 @@
+Recorder.samplerate= 0;
+Recorder.ArmStrip[0] =1;
+Recorder.ArmStrip[1] =1;
+Recorder.ArmStrip[2] =1;
+Recorder.ArmStrip[3] =1;
+Recorder.ArmStrip[4] =1;
+Recorder.ArmBUS[0] =1;
+Recorder.ArmBUS[1] =1;
+Recorder.mode.Loop=0;
+Recorder.mode.MultiTrack=0;
+Recorder.mode.recbus=0;
+recorder.mode.PlayOnLoad=1;
+recorder.bitresolution=16;
+recorder.Channel=2;
+
+recorder.FileType=3;
+recorder.kbps=128;
+recorder.Gain=0.0;
+

@@ -1,0 +1,78 @@
+/*--------------------------------------------------------------------------------*/
+/* VMR example: Voicemeeter Custom GUI for Streamers                              */
+/*--------------------------------------------------------------------------------*/
+/* 'C' Sample Code to make a Voicemeeter Custom GUI          V.Burel (c)2016-2021 */
+/*                                                                                */
+/*  THIS PROGRAM PROVIDES A GUI TO CONTROL VOICEMEETER                            */
+/*               PROVIDES A SIMPLIFIED GUI WITH ONLY USED STRIP/BUS               */   
+/*               PROVIDES A RESIZABLE GRAPHIC USER INTERFACE                      */   
+/*                                                                                */
+/*  This program example shows                                                    */
+/*  - How to link VoicemeeterRemote.dll                                           */
+/*  - How to Login / logout                                                       */
+/*  - How to Manage regular parameters to make a custom controller.               */
+/*                                                                                */
+/*--------------------------------------------------------------------------------*/
+/*                                                                                */
+/*  COMPILATION DIRECTIVES:                                                       */
+/*                                                                                */
+/*  To compile With Microsoft VC2005 or higher, you need to create an             */
+/*  empty Win32 project with the following options:                               */
+/*  - Configuration Properties / General : Char Set = NOT SET                     */
+/*  - Configuration Properties / C/C++ / Preprocessor : _CRT_SECURE_NO_DEPRECATE  */
+/*                                                                                */
+/*  This source code can be compiled for 32bit or 64 bits targets as well         */
+/*  WARNING: FOR 64x COMPILATION, ADD PREPROCESSOR DEFINE: VB_X64                 */
+/*                                                                                */
+/*--------------------------------------------------------------------------------*/
+/*                                                                                */
+/*  LICENSING: VoicemeeterRemote.dll usage is driven by a license agreement       */
+/*             given in VoicemeeterRemoteAPI.pdf or readme.txt                    */
+/*                                                                                */
+/*--------------------------------------------------------------------------------*/
+
+
+#include "vmr_streamer.h"
+
+100 ICON "vmr_streamer.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION __FILEVERSION__
+ PRODUCTVERSION __PRODUCTVERSION__
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x0L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "Comments", __COMMENTS__
+            VALUE "CompanyName", __COMPANYNAME__
+            VALUE "FileDescription", __FILEDESCRIPTION__
+            VALUE "FileVersion", __SZFILEVERSION__
+            VALUE "InternalName", __INTERNALNAME__
+            VALUE "LegalCopyright", __LEGALCOPYRIGHT__
+            VALUE "OriginalFilename", __ORIGINALFILENAME__
+            VALUE "ProductName", __PRODUCTNAME__
+            VALUE "ProductVersion", __SZPRODUCTVERSION__
+		END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+
