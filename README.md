@@ -1,8 +1,16 @@
 # Voicemeeter-SDK
 Voicemeeter Remote API + Source Code Examples
 
-Voicemeeter Remote API provides a set of function to control Voicemeeter parameters,  to process audio inside Voicemeeter, to get MIDI messages coming from the Voicemeeter MIDI-Mapping and to control the MacroButtons application too. Voicemeeter SDK offers different source code example. example0 is expected to show every functionnalties, other example are concrete application examples:
-Matrix8x8: example of Audio Processing Application offering a 8x8 gain matrix on a selected BUS
-vmr_osd: Exemple of Overlay Screen Display application to show the current gain of the current moving slider.
-vmr_play: example to use voicemeeter as audio board to playback a stereo sound.
-vmr_streamer: example of custom Graphic User Interface controlling Voicemeetere.
+Voicemeeter Remote API provides a set of functions to control Voicemeeter parameters,  to process audio inside Voicemeeter, to get MIDI messages coming from the Voicemeeter MIDI-Mapping and to control the MacroButtons application. Voicemeeter SDK offers different source code example. example0 is expected to show every functionnalties while other project are concrete application examples:
+
+- Matrix8x8: example of Audio Processing Application offering a 8x8 gain matrix on a selected BUS.
+- vmr_osd: Exemple of Overlay Screen Display Application to show the current gain of the current moving slider.
+- vmr_play: example to use voicemeeter as audio board to playback a stereo sound.
+- vmr_streamer: example of custom Graphic User Interface controlling Voicemeeter.
+
+# Compilation Instructions and Documentation
+Voicemeeter API are provided by standard Windows DLL installed with Voicemeeter. It provides 2x DLL for x32 and x64 applications. Linking method is given in the source code example. Compilation instructions are given in source code header and all API specifications are in the PDF document.
+
+# Licensing
+All source code of this SDK is free to use in any kind of project interacting with Voicemeeter though the voicemeeterremote DLL or VBAN protocol. More detail in VoicemeeterRemoteAPI.pdf
+
