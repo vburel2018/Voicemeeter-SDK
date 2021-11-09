@@ -14,3 +14,7 @@ Voicemeeter API are provided by standard Windows DLL installed with Voicemeeter.
 # Licensing
 All source code of this SDK is free to use in any kind of project interacting with Voicemeeter through the voicemeeterremote DLL or VBAN protocol. More detail in VoicemeeterRemoteAPI.pdf
 
+# Links
+Download Voicemeeter: www.voicemeeter.com
+VBAN Protocol: https://vb-audio.com/Voicemeeter/vban.htm
+VB-Audio Support page: https://vb-audio.com/Services/support.htm
