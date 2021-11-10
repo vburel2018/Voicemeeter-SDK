@@ -1,7 +1,7 @@
 # Voicemeeter-SDK
 Voicemeeter Remote API + Source Code Examples
 
-Voicemeeter Remote API provides a set of functions to control Voicemeeter parameters,  to process audio inside Voicemeeter, to get MIDI messages coming from the Voicemeeter MIDI-Mapping and to control the MacroButtons application. Voicemeeter SDK offers different source code example. example0 is expected to show every functionnalties while other project are concrete application examples:
+Voicemeeter Remote API provides a set of functions to control Voicemeeter parameters,  to process audio inside Voicemeeter, to get MIDI messages coming from the Voicemeeter MIDI-Mapping and to control the MacroButtons application. Voicemeeter SDK offers different source code example. example0 is expected to show every functionnalties while other projects are concrete application examples:
 
 - Matrix8x8: example of Audio Processing Application offering a 8x8 gain matrix on a selected BUS.
 - vmr_osd: Exemple of Overlay Screen Display Application to show the current gain of the current moving slider.
