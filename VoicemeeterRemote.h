@@ -1,5 +1,5 @@
 /******************************************************************************/
-/* Voicemeeter Remote API.                                  V.Burel©2015-2021 */
+/* Voicemeeter Remote API.                                  V.Burel©2015-2023 */
 /******************************************************************************/
 /* This Library allows communication with Voicemeeter applications            */
 /* 4 Client Applications can be connected to remote Voicemeeter.              */
@@ -303,6 +303,24 @@ long __stdcall VBVMR_GetLevel(long nType, long nuChannel, float * pValue);
 
 
 long __stdcall VBVMR_GetMidiMessage(unsigned char *pMIDIBuffer, long nbByteMax);
+
+
+	/** 
+	@brief Send MIDI message to M.I.D.I. output device used by Voicemeeter M.I.D.I. mapping.
+			(this function must be called from one thread only)
+
+	@param pMIDIBuffer:	pointer on MIDI Buffer containing consistent MIDI message.
+						(we recommand to not use more than 4KB buffer);
+
+
+	@return :	>0: number of bytes sent. 
+				-1: error
+				-2: no server.
+				-5: cannot send MIDI data
+	*/
+
+
+long __stdcall VBVMR_SendMidiMessage(unsigned char *pMIDIBuffer, long nbByte);
 
 
 /** @}  */
@@ -752,6 +770,7 @@ long __stdcall VBVMR_MacroButton_SetStatus(long nuLogicalButton, float fValue, l
 #define VBVMR_MACROBUTTON_MODE_DEFAULT		0x00000000	//PUSH or RELEASE button 
 #define VBVMR_MACROBUTTON_MODE_STATEONLY	0x00000002	//change Displayed State only
 #define VBVMR_MACROBUTTON_MODE_TRIGGER		0x00000003	//change Trigger State
+#define VBVMR_MACROBUTTON_MODE_COLOR		0x00000004	//change color
 
 
 
@@ -784,6 +803,7 @@ typedef long (__stdcall *T_VBVMR_GetParameterStringW)(char * szParamName, unsign
 
 typedef long (__stdcall *T_VBVMR_GetLevel)(long nType, long nuChannel, float * pValue);
 typedef long (__stdcall *T_VBVMR_GetMidiMessage)(unsigned char *pMIDIBuffer, long nbByteMax);
+typedef long (__stdcall *T_VBVMR_SendMidiMessage)(unsigned char *pMIDIBuffer, long nbByteMax);
 
 typedef long (__stdcall *T_VBVMR_SetParameterFloat)(char * szParamName, float Value);
 typedef long (__stdcall *T_VBVMR_SetParameters)(char * szParamScript);
@@ -823,6 +843,7 @@ typedef struct tagVBVMR_INTERFACE
 
 	T_VBVMR_GetLevel				VBVMR_GetLevel;
 	T_VBVMR_GetMidiMessage			VBVMR_GetMidiMessage;
+	T_VBVMR_SendMidiMessage			VBVMR_SendMidiMessage;
 
 	T_VBVMR_SetParameterFloat		VBVMR_SetParameterFloat;
 	T_VBVMR_SetParameters			VBVMR_SetParameters;
@@ -846,6 +867,7 @@ typedef struct tagVBVMR_INTERFACE
 	T_VBVMR_MacroButton_GetStatus	VBVMR_MacroButton_GetStatus;
 	T_VBVMR_MacroButton_SetStatus	VBVMR_MacroButton_SetStatus;
 
+
 } T_VBVMR_INTERFACE, *PT_VBVMR_INTERFACE, *LPT_VBVMR_INTERFACE;
 
 #ifdef VBUSE_LOCALLIB
@@ -856,16 +878,22 @@ typedef struct tagVBVMR_INTERFACE
 
 
 
+
+
+
 /******************************************************************************/
 /*                                VBAN RT PACKET                              */
 /******************************************************************************/
 
 #pragma pack(1)
 
+// short = 2 bytes
+// char = 1 byte
+
 // COMPATIBILITY: defined structure cannot be changed.
 // some field could be added at the end of the structure to keep the compatibility in the time.  
 
-typedef struct tagVBAN_VMRT_PACKET
+typedef struct tagVBAN_VMRT_PACKET			//packedt ident: 0
 {
 	unsigned char voicemeeterType;			// 1 = Voicemeeter, 2= Voicemeeter Banana, 3 Potato
 	unsigned char reserved;					// unused
@@ -944,8 +972,99 @@ typedef struct tagVBAN_VMRT_PACKET
 #define VMRTSTATE_MODE_MONITOR		0x20000000
 
 
+#pragma pack(1)
+
+// long = 4 bytes
+// short = 2 bytes
+// char = 1 byte
+// float = 4 bytes
+
+typedef struct tagVBAN_VMPARAM_STRIP
+{
+	long mode;
+	float dblevel;			// x 100
+	short Audibility;		// x 100
+	short pos3D_x;			// x 100
+	short pos3D_y;			// x 100
+	short posColor_x;		// x 100
+	short posColor_y;		// x 100
+	short EQgain1;			// x 100
+	short EQgain2;			// x 100
+	short EQgain3;			// x 100
+	
+	//first channel parametric EQ 
+	char PEQ_eqOn[6];		// 0 or 1
+	char PEQ_eqtype[6];		// see define below
+	float PEQ_eqgain[6];	
+	float PEQ_eqfreq[6];
+	float PEQ_eqq[6];
+
+	short Audibility_c;		// x 100
+	short Audibility_g;		// x 100
+	short Audibility_d;		// x 100
+	short posMod_x;			// x 100
+	short posMod_y;			// x 100
+	short send_reverb;		// x 100
+	short send_delay;		// x 100
+	short send_fx1;			// x 100
+	short send_fx2;			// x 100
+	short dblimit;			// x 100
+	short nKaraoke;			// x 100
+
+	short COMP_gain_in;		// x 100
+	short COMP_attack_ms;	// x 10
+	short COMP_release_ms;	// x 10
+	short COMP_n_knee;		// x 100
+	short COMP_comprate;	// x 100
+	short COMP_threshold;	// x 100
+	short COMP_c_enabled;	
+	short COMP_c_auto;
+	short COMP_gain_out;	// x 100
+
+	short GATE_dBThreshold_in;	// x 100
+	short GATE_dBDamping_max;	// x 100
+	short GATE_BP_Sidechain;	// x 10
+	short GATE_attack_ms;		// x 10
+	short GATE_hold_ms;			// x 10
+	short GATE_release_ms;		// x 10
+
+	short DenoiserThreshold;	// x 100
+	short PitchEnabled;		
+	short Pitch_DryWet;			// x 100
+	short Pitch_Value;			// x 100
+	short Pitch_formant_lo;		// x 100
+	short Pitch_formant_med;	// x 100
+	short Pitch_formant_high;	// x 100
+
+} T_VBAN_VMPARAM_STRIP, *PT_VBAN_VMPARAM_STRIP, *LPT_VBAN_VMPARAM_STRIP;
+
+#define VMRT_EQTYPE_PEQ		0
+#define VMRT_EQTYPE_NOTCH	1
+#define VMRT_EQTYPE_BPF		2
+#define VMRT_EQTYPE_LPF		3
+#define VMRT_EQTYPE_HPF		4
+#define VMRT_EQTYPE_LOSHELF	5
+#define VMRT_EQTYPE_HISHELF	6
 
 
+#define expected_size_T_VBAN_VMPARAM_STRIP (8+ (8 * sizeof(short)) + (2*6) + (3 * 6 * sizeof(float)) + ((11 + 9 + 6 + 7) * sizeof(short)))
+//170
+
+typedef struct tagVBAN_VMPARAMSTRIP_PACKET		//packedt ident: 1
+{
+	unsigned char voicemeeterType;			// 1 = Voicemeeter, 2= Voicemeeter Banana, 3 Potato
+	unsigned char reserved;					// unused
+	unsigned short buffersize;				// main stream buffer size
+	unsigned long voicemeeterVersion;		// version like for VBVMR_GetVoicemeeterVersion() functino
+	unsigned long optionBits;				// unused
+	unsigned long samplerate;				// main stream samplerate
+	T_VBAN_VMPARAM_STRIP Strips[8];			// all input strips
+} T_VBAN_VMPARAMSTRIP_PACKET, *PT_VBAN_VMPARAMSTRIP_PACKET, *LPT_VBAN_VMPARAMSTRIP_PACKET;
+
+#pragma pack()
+
+#define expected_size_T_VBAN_VMPARAMSTRIP_PACKET ((4 * 4) + (expected_size_T_VBAN_VMPARAM_STRIP * 8)) //1436 max
+//1376
 
 /******************************************************************************/
 /*                               LOCAL FUNCTIONS                              */
