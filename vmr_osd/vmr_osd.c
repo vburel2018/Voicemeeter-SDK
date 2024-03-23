@@ -944,11 +944,18 @@ int APIENTRY WinMain(HINSTANCE handle_app,			//Application hinstance.
 		return 0;
 	}
 	
+	const int IS_CLICK_THROUGH = 1;
 	
-	//to display above all windows
-	styleEx = WS_EX_TOPMOST;	
+	styleEx = WS_EX_TOPMOST | //to display above all windows
+		WS_EX_NOACTIVATE;  //to not grab focus
+
+	if (IS_CLICK_THROUGH)
+	{
+		styleEx |= WS_EX_TRANSPARENT | WS_EX_LAYERED; //to make window click-through
+	}
+
 	//windows without caption and border and not visible
-	style=WS_POPUP;
+	style = WS_POPUP;
 
 	if (G_pCreateWindowInBand == NULL)
 	{
@@ -986,6 +993,11 @@ int APIENTRY WinMain(HINSTANCE handle_app,			//Application hinstance.
 	{
 		MessageBox(NULL,"Failed to create window...",title,MB_APPLMODAL | MB_OK | MB_ICONERROR);
 		return 0;
+	}
+
+	if (IS_CLICK_THROUGH)
+	{
+		SetLayeredWindowAttributes(hh, 0, 255, LWA_ALPHA);
 	}
 	ShowWindow(hh,SW_HIDE);				//Display the window.
 	/*---------------------------------------------------------------------------*/
